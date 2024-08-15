@@ -31,7 +31,7 @@ def apply_registering_transform(mov_img, tform):
 def get_registering_transform(ref_file, mov_file):
     ref_img = io.imread(ref_file)
     mov_img = io.imread(mov_file)
-    shift = registration.phase_cross_correlation(ref_img, mov_img, return_error = False)
+    shift, _, _ = registration.phase_cross_correlation(ref_img, mov_img)
     tform = transform.EuclideanTransform(translation=[-shift[1], -shift[0]])
 
     # compute correlation coefficient after registration
