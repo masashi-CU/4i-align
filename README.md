@@ -29,6 +29,6 @@ conda activate 4i-align
 
 ## Usage
 ```
-python 4i-align.py <reference_folder> <query_folder> <output_folder>
+python3 4i-align.py <reference_folder> <query_folder> <output_folder>
 ```
 The shifted query images will be saved to the output folder.
