@@ -1,6 +1,15 @@
-Python script and its example input.
+# Alignment of 4i images based on landmarks
 
-Usage:
+Python script and its example input.
+Here is my Python script to align tiles. Its inputs are:
+
+## Installation
+```
+conda create -n 4i-align skimage numpy pandas
+git clone 
+```
+
+## Usage
 In the command line, you will run the script, specifying reference folder, moving folder, and output folder.
 % python align-tile-by-DAPI.py <reference_folder> <moving_folder> <output_folder>
 Images in the moving folder will be read, shifted in x-y direction to maximize alignment of landmarks, and saved to output folder.
@@ -10,7 +19,6 @@ Spot: specifies corresponding locations between ref and mov.
 Landmark: “Yes” shows DAPI
 File: image file name
 
-Here is my Python script to align tiles. Its inputs are:
 “Reference” folder for the first round of 4i images. Images are non-stitched, single-channel TIFF images. DAPI channels should have a suffix “_c0000.tif”. For example, files for three-channel imaging at two positions may be something like:
 position0000_c0000.tif (DAPI)
 position0000_c0001.tif
