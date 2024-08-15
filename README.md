@@ -10,7 +10,7 @@ The same x-y shift will be applied to the other channels of query.
 
 ## Installation
 
-1. Download [script files](https://github.com/masashi-CU/4i-align/archive/refs/tags/v0.3.zip), and unpack it.
+1. Download [script files](https://github.com/masashi-CU/4i-align/archive/refs/tags/v0.4.zip), and unpack it.
 
 2. Create conda environment.
 ```
