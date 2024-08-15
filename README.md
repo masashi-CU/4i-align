@@ -1,19 +1,25 @@
 # Alignment of 4i images based on landmarks
 
-Python script and its example input.
-Here is my Python script to align tiles. Its inputs are:
+Python script for aligning query images onto reference images of 4i.
+Query and reference images share one common channel ("landmark") as a clue of alignment.
+DAPI may be a good option of the landmark channel.
+Query and reference may have different numbers of channels but must be recorded at the same set of locations.
+
+Query landmark image will be shifted in x-y direction to maximize its correlation with the reference landmark image.
+The same x-y shift will be applied to the other channels of query. The shifted images are saved to an output folder.
+
 
 ## Installation
+
+Download [script files](https://github.com/masashi-CU/4i-align/archive/refs/tags/v0.3.zip) and unpack.
+
+Create conda environment.
 ```
-conda create -n 4i-align skimage numpy pandas
-git clone 
+conda create -n 4i-align scikit-image numpy pandas
+conda activate 4i-align
 ```
 
-## Usage
-In the command line, you will run the script, specifying reference folder, moving folder, and output folder.
-% python align-tile-by-DAPI.py <reference_folder> <moving_folder> <output_folder>
-Images in the moving folder will be read, shifted in x-y direction to maximize alignment of landmarks, and saved to output folder.
-
+## Prepare input
 To specify relationship of images, please create two CSV files (images.csv), one in the reference folder, and another in the moving folder.
 Spot: specifies corresponding locations between ref and mov.
 Landmark: “Yes” shows DAPI
@@ -31,4 +37,11 @@ position0000_c0000.tif (DAPI)
 position0000_c0003.tif
 position0001_c0000.tif (DAPI)
 position0001_c0003.tif
+
+## Usage
+```
+python 4i-align.py <reference_folder> <query_folder> <output_folder>
+```
+
+
  
