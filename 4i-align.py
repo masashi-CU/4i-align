@@ -1,4 +1,4 @@
-# 4i-align.py (version 0.2.0)
+# 4i-align.py (version 0.3)
 # Written by Masashi Fujita <mf3362@cumc.columbia.edu>
 # Feb 22, 2024
 
